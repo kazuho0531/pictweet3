@@ -36,7 +36,7 @@
         <% @comments.each do |comment| %>
           <p>
             <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-            <%= comment.text %>
+            <%= raw Rinku.auto_link(h(comment.text)) %>
           </p>
         <% end %>
       <% end %>
